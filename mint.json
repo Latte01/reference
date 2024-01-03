@@ -24,14 +24,11 @@
         {
           "group": "产品简介",
           "pages": [
-            "introduction/introduction",
-            "introduction/functions",
-            "introduction/advantages"
+            "docs/introduction/introduction",
+            "docs/introduction/functions",
+            "docs/introduction/advantages"
           ]
-        },
-        "introduction", 
-        "quickstart", 
-        "development"
+        }
       ]
     }
   ],
