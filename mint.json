@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/docs/logo/dark.svg",
+    "light": "/docs/logo/light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/docs/favicon.svg",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -28,7 +28,7 @@
   "tabs": [
     {
       "name": "API Reference",
-      "url": "api-reference"
+      "url": "/docs/bak/api-reference"
     }
   ],
   "anchors": [
@@ -50,23 +50,11 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
-    },
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/introduction"]
-    },
-    {
       "group": "Endpoint Examples",
       "pages": [
-        "docs/bak/api-reference/endpoint/get",
-        "docs/bak/api-reference/endpoint/create",
-        "docs/bak/api-reference/endpoint/delete"
+        "/docs/bak/api-reference/endpoint/get",
+        "/docs/bak/api-reference/endpoint/create",
+        "/docs/bak/api-reference/endpoint/delete"
       ]
     }
   ]
