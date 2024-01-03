@@ -24,7 +24,8 @@
           "pages": [
             "docs/introduction/introduction",
             "docs/introduction/functions",
-            "docs/introduction/advantages"
+            "docs/introduction/advantages",
+            "docs/introduction/quickstart"
           ]
         }
       ]
