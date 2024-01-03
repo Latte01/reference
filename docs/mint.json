@@ -15,9 +15,7 @@
       "to": "#07C983"
     }
   },
-  "topbarLinks": [
-
-  ],
+  "topbarLinks": [],
   "topbarCtaButton": {
     "name": "Test",
     "url": ""
