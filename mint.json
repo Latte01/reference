@@ -15,19 +15,6 @@
       "to": "#07C983"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": ""
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Test",
-    "url": ""
-  },
-  "tabs": [
-
-  ],
   "anchors": [
   ],
   "navigation": [
