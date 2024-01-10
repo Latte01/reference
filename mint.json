@@ -24,9 +24,19 @@
           "pages": [
             "docs/introduction/introduction",
             "docs/introduction/functions",
-            "docs/introduction/advantages",
-            "docs/introduction/quickstart",
-            "docs/introduction/开始"
+            "docs/introduction/advantages"
+          ]
+        },
+        {
+          "group": "平台管理",
+          "pages": [
+            "docs/management/intro-management",
+            "docs/management/org-setting",
+            "docs/management/apikeys",
+            "docs/management/security",
+            "docs/management/general-model",
+            "docs/management/org-management",
+            "docs/management/user-management"
           ]
         }
       ]
