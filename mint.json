@@ -24,7 +24,7 @@
   },
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "",
       "pages": [
         {
           "group": "产品简介",
@@ -66,9 +66,21 @@
           ]
         },
         {
+          "group": "技能管理",
+          "pages": [
+            "docs/tools/tools-intro",
+            "docs/tools/tools-new",
+            "docs/tools/tools-management"
+          ]
+        },
+        {
           "group": "专属定制",
           "pages": [
-            "docs/llm/llm-intro"
+            "docs/llm/llm-intro",
+            "docs/llm/llm-new",
+            "docs/llm/llm-version",
+            "docs/llm/llm-invoke",
+            "docs/llm/llm-debug"
           ]
         }
       ]

@@ -1,0 +1,45 @@
+---
+title: '版本管理'
+description: ''
+'og:title': '版本管理'
+---
+---
+专属大模型的定制以版本的方式进行管理，可以对版本进行管理、查看详情等。
+
+## 查看版本
+
+用户进入到大模型项目的编辑页面后，点击右上角的 `历史版本` 来查看当前正在定制的大模型的版本历史。如下图右侧所示。
+
+<img
+    src="docs/images/llm-version-list.png"
+    alt="LLM versions"
+/>
+
+## 查看版本详情
+点击指定版本的 `详情` 按钮，打开如下图所示的版本详情页。
+
+<img
+    style={{width: "500px", border: "1px solid #EEE"}}
+    src="docs/images/llm-version-info.png"
+    alt="LLM version info"
+/>
+
+## 查看制作日志
+在版本详情页中，点击 `模型制作` 环节中的步骤，将打开如下图所示的步骤日志。
+
+<img
+    style={{width: "500px", border: "1px solid #EEE"}}
+    src="docs/images/llm-version-deploy.png"
+    alt="LLM version deploy"
+/>
+
+## 上线/下线
+您可以根据需要将处于 `下线` 状态的指定版本进行 `上线`，同时，可以将处于 `上线` 状态的版本进行 `下线`，以实现版本的切换。
+
+<Warning>请注意，制作失败的版本无法执行 `上线` 操作</Warning>
+
+## 还原版本
+您可以根据需要将任何一个版本进行 `还原` ，将其配置作为当前版本的配置，以实现配置克隆的目的，新的版本可以再此基础上再进行配置。
+
+## 删除版本
+您可以根据需要将任何一个版本进行 `删除` ，需要注意，被删除的版本将 **无法恢复**！
