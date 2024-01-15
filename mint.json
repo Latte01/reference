@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "专业大模型定制平台",
+  "name": "Documents",
   "logo": {
     "dark": "/docs/logo/dark.png",
     "light": "/docs/logo/light.png"
@@ -14,6 +14,13 @@
       "from": "#0D9373",
       "to": "#07C983"
     }
+  },
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": false
+  },
+  "search": {
+    "prompt": "查找..."
   },
   "navigation": [
     {
@@ -30,7 +37,7 @@
         {
           "group": "平台管理",
           "pages": [
-            "docs/management/intro-management",
+            "docs/management/management-intro",
             "docs/management/org-setting",
             "docs/management/apikeys",
             "docs/management/security",
@@ -38,8 +45,34 @@
             "docs/management/org-management",
             "docs/management/user-management"
           ]
+        },
+        {
+          "group": "知识管理",
+          "pages": [
+            "docs/knowledge/knowledge-intro",
+            "docs/knowledge/knowledge-steps",
+            "docs/knowledge/knowledge-new",
+            "docs/knowledge/knowledge-folder-new",
+            "docs/knowledge/knowledge-import",
+            {
+              "group": "编辑知识",
+              "pages": [
+                "docs/knowledge/knowledge-edit-doc",
+                "docs/knowledge/knowledge-edit-txt",
+                "docs/knowledge/knowledge-edit-gpt",
+                "docs/knowledge/knowledge-edit-faq"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "专属定制",
+          "pages": [
+            "docs/llm/llm-intro"
+          ]
         }
       ]
     }
   ]
+  
 }

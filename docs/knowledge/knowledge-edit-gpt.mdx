@@ -1,0 +1,41 @@
+---
+title: 'GPT知识'
+description: ''
+'og:title': 'GPT知识'
+---
+---
+GPT 类型的知识是指由 GPT 等语言模型生成的知识，支持 `JSONL` 格式。平台支持对其进行可视化编辑、文件重命名和删除。
+
+打开 GPT 文件，如下图所示。
+<img
+    src="docs/images/knowledge-gpt-edit.png"
+    alt="edit GPT file"
+/>
+## 编辑会话
+如上图所示，可以直接在打开的 GPT 文档中对其内容进行编辑。
+
+<Tip>其中 `问题` 和 `最优回答` 项为必填项，否则无法保存。</Tip>
+
+## 新建会话
+新建对话指的是在当前 GPT 文件中新建一轮对话。
+
+<Tip>若要支持多轮会话，可以在新建一轮会话之后在其内通过下文介绍的 `插入会话` 来支持多轮会话。</Tip>
+
+点击右上角的 `新建会话` 按钮来新建新的会话
+<img
+    style={{width: "450px", border: "1px solid #EEE"}}
+    src="docs/images/knowledge-gpt-new.png"
+    alt="new GPT"
+/>
+
+点击 `确定` 将保存至当前打开的GPT文件中。
+
+## 插入会话
+插入会话指的是在单轮会话中插入会话，以实现多轮会话。如下图所示，可以在会话间插入，也可以在会话后插入会话以实现多轮对话。
+<img
+    src="docs/images/knowledge-gpt-insert.png"
+    alt="insert GPT"
+/>
+
+## 保存会话
+点击右上角的 `全部保存` 按钮来保存对当前 GPT 文档的编辑。

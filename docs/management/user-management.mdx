@@ -7,7 +7,6 @@ description: ''
 
 用户在“**用户管理**”->“**用户**”中进行用户的管理。用户管理如下图所示：
 <img
-    className="block dark:hidden"
     src="docs/images/user-management.png"
     alt="user management"
 />
@@ -15,8 +14,17 @@ description: ''
 用户管理模块有以下操作。
 
 ## 邀请成员
-组织管理员可以通过电子邮件邀请的方式邀请用户加入其组织。
+组织管理员可以通过电子邮件以邀请的方式邀请用户加入其组织。
 
+点击“**邀请成员**”按钮，可以对成员进行批量邀请。成员邀请如下图所示：
 
+<img
+    style={{width: "460px", border: "1px solid #EEE"}}
+    src="docs/images/user-invitation.png"
+    alt="user invitation"
+/>
+
+被邀请的组织成员将收到邀请邮件，用户根据邮件提示完成邀请。
 
 ## 移出组织
+组织管理员可以将组内的成员移出组织，被移出该组织的成员将无法再切换至该组织。若用户不属于任何组织，其将无法登录。
