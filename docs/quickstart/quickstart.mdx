@@ -1,0 +1,322 @@
+---
+title: '快速开始'
+description: ''
+'og:title': '快速开始'
+---
+---
+专业大模型定制平台为开发人员提供一站式的数据管理、技能管理和大模型定制的服务，请按照下面的说明学习如何使用该平台。
+
+## 使用流程
+
+使用流程如下：
+
+<Steps>
+  <Step title="用户注册">
+    首先需要注册账号，注册了账号之后就可以使用平台丰富的功能。请前往平台 **首页** 进行注册。
+  </Step>
+  <Step title="用户登录">
+    用户登录平台，导航到 **API Keys** 页面并“创建新密钥”。一定要把它保存在安全的地方，不要和任何人分享。创建 API Keys 参考 [API Keys](../management/apikeys) 章节。
+  </Step>
+  <Step title="准备知识">
+    若要在训练中使用知识库，您需要在训练制作专业大模型前准备用于训练的数据/知识。请前往顶部导航中的 **知识集** 来添加知识集。创建知识集请参考 [知识管理](../knowledge/knowledge-intro) 章节。若在训练过程中 **不使用** 知识库，可以跳过此步骤。
+  </Step>
+  <Step title="准备技能">
+    若要在训练中使用技能，您需要在训练制作专业大模型前准备用于训练的技能。请前往顶部导航中的 **技能库** 来添加技能。创建技能请参考 [技能管理](../tools/tools-intro) 章节。若在训练过程中 **不使用** 技能，可以跳过此步骤。
+  </Step>
+  <Step title="训练模型">
+    通过点击 `专属定制` 来创建模型训练任务。创建专属定制请参考 [新建专属定制](../llm/llm-intro) 和 [专属定制流程](../llm/llm-steps) 章节。
+  </Step>
+  <Step title="上线服务">
+    模型版本训练成功后，将自动部署上线。对于处于 `下线` 状态的服务需要手动进行 `上线`。服务管理请参考 [版本管理](../llm/llm-version) 章节。
+  </Step>
+  <Step title="测试服务">
+    模型部署上线后，可以对其进行测试。服务测试请参考 [模型测试](../llm/llm-debug) 章节。
+  </Step>
+</Steps>
+
+<Tip>若在创建专业大模型的过程中未使用 `知识` 和 `技能`，则最终会将您所选的 `通识模型` 部署为服务。</Tip>
+
+## 使用示例
+通过以下示例来训练一个专业大模型并将其部署为服务进行调用测试。
+
+进入官方网站，如下图所示。
+
+<img
+    src="docs/images/home.png"
+    alt="Home"
+/>
+
+### 1. 用户注册
+首先，创建一个帐户。点击首页右上角 `注册` 来进行注册。
+
+<Accordion title="如何注册">
+
+  注册页面如下图所示，根据实际情况填写必要的信息。
+
+    <img
+        style={{width: "320px", border: "1px solid #EEE"}}
+        src="docs/images/user-signup.png"
+        alt="Sign up"
+    />
+</Accordion>
+
+### 2. 用户登录
+用账号登录平台。点击首页右上角 `登录` 来登录平台。
+
+<Accordion title="如何登录">
+
+  登录页面如下图所示，请使用您的账号密码进行登录，或者使用手机号进行登录。
+
+    <img
+        style={{width: "320px", border: "1px solid #EEE"}}
+        src="docs/images/user-login.png"
+        alt="Log in"
+    />
+</Accordion>
+
+### 3. 准备知识集
+导航到 **知识集** 页面，按照以下步骤来创建知识集，以 `GPT` 类型知识为例。
+
+<AccordionGroup>
+  <Accordion title="GPT类型知识格式">
+    `GPT` 类型知识数据集为 `JSONL` 格式的数据，其中的每个JSON对象格式如下所示。
+
+    ```JSON Example.jsonl
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "Marv is a factual chatbot that is also sarcastic."
+            },
+            {
+                "role": "user",
+                "content": "What's the capital of France?"
+            },
+            {
+                "role": "assistant",
+                "content": "Paris, as if everyone doesn't know that already.",
+                "metadata": {
+                    "original_answer": "",
+                    "human_answer": "",
+                    "ai_answer": ""
+                }
+            },
+            {
+                "role": "user",
+                "content": "What's the capital of France?"
+            },
+            {
+                "role": "assistant",
+                "content": "Paris, as if everyone doesn't know that already.",
+                "metadata": {
+                    "original_answer": "",
+                    "human_answer": "",
+                    "ai_answer": ""
+                }
+            }
+        ],
+        "metadata": {
+            "_schema": "CHAT",
+            "_schema_version": "1"
+        }
+    }
+    ```
+
+    您需要根据以上的格式准备JSONL格式数据集作为 `GPT` 类型的知识集。 
+
+  </Accordion>
+  <Accordion title="新建GPT类型知识集">
+    点击左上角的 `新建知识库` 按钮来创建知识集。知识集的创建页面如下图所示，当前创建的知识集类型为 `GPT` 类型。
+
+    <img
+        src="docs/images/knowledge-new.png"
+        alt="Log in"
+    />
+    点击底部的 `提交` 按钮，完成知识集的创建。
+
+  </Accordion>
+
+  <Accordion title="新建文件夹">
+    知识集创建成功后，需要往知识集里导入数据。当前知识集管理 **最多以三级目录结构** 的方式进行管理，因数据集类型而异，最终以文件夹是否能创建子文件夹来决定。数据文件只能在叶子文件夹中，目录结构如下图所示。
+    
+    - 一级文件夹
+      - 二级文件夹
+        - **数据文件**
+
+    如下图所示来创建一级文件夹。
+
+    <img
+        src="docs/images/knowledge-folder-new-one.png"
+        alt="create a top-level folder"
+    />
+
+    GPT类型知识集只需要有一级文件夹，此时我们就可以在新建的文件夹内导入数据。
+
+  </Accordion>
+
+  <Accordion title="导入数据">
+
+    将按照上文定义的 `JSONL` 文件导入到知识集中，即导入到文件夹中。
+
+    <Tip>若 `导入文档` 按钮不可用，表示当前文件夹内不允许导入数据，您需要在其子文件夹中导入数据。</Tip>
+
+    导入数据如下图所示。
+
+    <img
+        src="docs/images/knowledge-folder-import.png"
+        alt="import data"
+    />
+
+    数据导入后如下图所示。
+    <img
+        src="docs/images/knowledge-gpt-import-success.png"
+        alt="import data"
+    />
+
+    点击文件，打开该GPT文件可查看其内容，如下图所示。
+    <img
+        src="docs/images/knowledge-gpt-open.png"
+        alt="import data"
+    />
+
+  </Accordion>
+</AccordionGroup>
+
+通过以上步骤，完成了一个知识集的创建。
+
+### 4. 准备技能
+导航到 **技能库** 页面，按照以下步骤来创建技能，以 `天气查询` 技能为例。
+
+<AccordionGroup>
+  <Accordion title="准备技能的OpenAPI Schema">
+
+    为了让大模型能更好地识别和使用您的技能，您需要提供技能的OpenAPI描述文件，示例如下所示。你可以前往 OpenAPI 官网了解更多 OpenAPI 相关信息。
+
+    ```yaml Example.yaml
+    openapi: 3.0.1
+    info:
+        title: 天气预报
+        description: 个性化查询不同地区的天气。
+        version: "v1"
+    servers:
+        - url: http://127.0.0.1:8081
+    paths:
+        /get_weather:
+            post:
+            operationId: getWeather
+            summary: 展示天气
+            requestBody:
+                required: true
+                content:
+                application/json:
+                    schema:
+                    $ref: "#/components/schemas/getWeather"
+            responses:
+                "200":
+                description: 天气展示完成
+                content:
+                    application/json:
+                    schema:
+                        $ref: "#/components/schemas/weatherResponse"
+    components:
+    schemas:
+        getWeather:
+        type: object
+        required: [city]
+        properties:
+            city:
+            type: string
+            description: 城市
+        weatherResponse:
+        type: object
+        required: [weather]
+        properties:
+            weather:
+            type: object
+            description: 天气内容
+    ```
+
+  </Accordion>
+
+  <Accordion title="新建技能">
+
+    <Tip>需要确保技能的OpenAPI描述文件是可用并可访问的。</Tip>
+
+    点击左上角的 `新建技能` 按钮来创建技能。技能的创建页面如下图所示。
+
+    <img
+        src="docs/images/tools-new.png"
+        alt="new tool"
+    />
+
+    导入技能的 OpenAPI 描述文件，如上文中的 `Example.yaml`。
+
+    <img
+        src="docs/images/tools-new-info.png"
+        alt="tool info"
+    />
+
+    点击底部的 `保存` 按钮，完成技能的创建。
+
+  </Accordion>
+</AccordionGroup>
+
+通过以上步骤，完成了一个技能的创建。
+
+### 5. 训练模型
+导航到 **专属定制** 页面，请按照以下步骤来创建模型训练任务。
+
+<AccordionGroup>
+  <Accordion title="新建专属定制">
+
+    在专属定制页面点击 `专属定制` 按钮来定制专属大模型。用户需要根据表单要求填写和配置定制专属大模型所需要的内容。在配置的过程中选择前面步骤中创建的 `知识集` 和 `技能`，若前面未创建知识集和技能，可不用配置 `知识集` 和 `技能`。
+
+    <img
+        src="docs/images/llm-new-basic.png"
+        alt="train setting"
+    />
+
+    如何配置请参考 [新建专属定制](../llm/llm-new) 章节。
+
+  </Accordion>
+
+  <Accordion title="模型制作">
+
+    完成配置后，点击右上角的 `制作` 按钮，项目开始进入模型训练和制作的过程，同时，平台会在 `历史版本` 中创建一个新版本。如下图所示，此时当前版本正在制作中。
+
+    <img
+        src="docs/images/llm-version-train.png"
+        alt="model train"
+    />
+
+  </Accordion>
+
+</AccordionGroup>
+
+通过以上步骤，此时任务进入了训练状态，训练过程会比较长。若在新建专属定制的过程中未配置 `知识集` 和 `技能`，则任务会直接将您所选择的 `通识模型` 部署为服务。
+
+### 6. 上线服务
+模型训练和制作完成后，会自动将模型部署为在线服务。此时，当前版本的状态为 `当前运行`。
+
+<Accordion title="查看服务是否上线">
+
+  如下图所示，点击右上角的 `历史版本` 按钮，则打开当前大模型的历史版本窗口，可以查看是否有版本处于运行状态，即可以提供调用服务。
+
+    <img
+        src="docs/images/llm-version-running.png"
+        alt="service running"
+    />
+</Accordion>
+
+### 7. 测试服务
+平台提供简单的大语言模型的调试功能，您可以通过该功能简单测试其能力。
+
+<Accordion title="如何测试服务">
+
+  如下图所示，点击右上角的 `测试` 按钮，则打开当前大模型的调试窗口。
+
+    <img
+        src="docs/images/llm-debug.png"
+        alt="test service"
+    />
+</Accordion>

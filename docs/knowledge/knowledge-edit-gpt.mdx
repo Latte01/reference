@@ -11,6 +11,51 @@ GPT 类型的知识是指由 GPT 等语言模型生成的知识，支持 `JSONL`
     src="docs/images/knowledge-gpt-edit.png"
     alt="edit GPT file"
 />
+
+## 格式定义
+`GPT` 类型知识数据集为 `JSONL` 格式的数据，其中的每个JSON对象格式如下所示。
+
+    ```JSON Example.jsonl
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "Marv is a factual chatbot that is also sarcastic."
+            },
+            {
+                "role": "user",
+                "content": "What's the capital of France?"
+            },
+            {
+                "role": "assistant",
+                "content": "Paris, as if everyone doesn't know that already.",
+                "metadata": {
+                    "original_answer": "",
+                    "human_answer": "",
+                    "ai_answer": ""
+                }
+            },
+            {
+                "role": "user",
+                "content": "What's the capital of France?"
+            },
+            {
+                "role": "assistant",
+                "content": "Paris, as if everyone doesn't know that already.",
+                "metadata": {
+                    "original_answer": "",
+                    "human_answer": "",
+                    "ai_answer": ""
+                }
+            }
+        ],
+        "metadata": {
+            "_schema": "CHAT",
+            "_schema_version": "1"
+        }
+    }
+    ```
+
 ## 编辑会话
 如上图所示，可以直接在打开的 GPT 文档中对其内容进行编辑。
 

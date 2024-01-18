@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Documents",
   "logo": {
-    "dark": "/docs/logo/dark.png",
-    "light": "/docs/logo/light.png"
+    "dark": "/docs/logo/dark-1.png",
+    "light": "/docs/logo/light-1.png"
   },
   "favicon": "/docs/logo/favicon.png",
   "colors": {
@@ -26,6 +26,7 @@
     {
       "group": "",
       "pages": [
+        "docs/quickstart/quickstart",
         {
           "group": "产品简介",
           "pages": [
@@ -77,6 +78,7 @@
           "group": "专属定制",
           "pages": [
             "docs/llm/llm-intro",
+            "docs/llm/llm-steps",
             "docs/llm/llm-new",
             "docs/llm/llm-version",
             "docs/llm/llm-invoke",
@@ -86,5 +88,4 @@
       ]
     }
   ]
-  
 }
