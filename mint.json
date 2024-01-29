@@ -3,7 +3,8 @@
   "name": "Documents",
   "logo": {
     "dark": "/docs/logo/dark-1.png",
-    "light": "/docs/logo/light-1.png"
+    "light": "/docs/logo/light-1.png",
+    "href": "/llm"
   },
   "favicon": "/docs/logo/favicon.png",
   "colors": {
